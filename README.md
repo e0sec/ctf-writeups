@@ -2,8 +2,8 @@
 
 | Competition | Date | Result |
 |-------------|------|--------|
-| [THEM?!CTF 2026](themctf/) | 29–31 May 2026 | 🥇 28th / 920 teams — captained e0_ |
-| [GPN CTF 2026](gpnctf/) | 5–6 June 2026 | 💯th / 1138 teams — co-captained e0_ |
+| [THEM?!CTF 2026](themctf/) | 29–31 May 2026 | 🥇 28th / 920 teams — team e0_ |
+| [GPN CTF 2026](gpnctf/) | 5–6 June 2026 | 💯th / 1138 teams — team e0_ |
 
 ---
 
