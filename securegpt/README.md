@@ -3,7 +3,7 @@
 | Field | Details |
 |-------|---------|
 | **Challenge** | SecureGPT |
-| **Platform** | themectf.com |
+| **Platform** | themctf.com |
 | **Category** | Web / API Security |
 | **Flag** | `THEM?!CTF{100023c3-7614-4558-8a4d-f8aff16090dd}` |
 
