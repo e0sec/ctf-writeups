@@ -1,6 +1,6 @@
 # THEM?!CTF 2026 — Writeups
 
-CTF writeups from [THEM?!CTF](https://themectf.com) by **e0_** / Ivan.
+CTF writeups from [THEM?!CTF](https://themctf.com) by **e0_** / Ivan.
 
 Team placed **28th out of 920 teams**.
 
