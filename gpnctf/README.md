@@ -1,8 +1,8 @@
-# GPN CTF 2026 (5-6 June) — Writeups
+# GPN CTF 2024/2025 — Writeups
 
 | Challenge | Category | Flag |
 |-----------|----------|------|
-| [COMpetition](com_petition/) | Crypto | `GPNCTF{W4IT, i7'S NOT ju5t LuCK? NeVeR h4S bE3N.}` |
+| [COMpetition](com_petition/) | Crypto | `GPNCTF{...}` |
 | [Customer Service](customer_service/) | Misc / Pwn | `GPNCTF{Ex-Un4-11nE4-VAcUA-SequitUr-qUoD1iB37}` |
 | [easy-dsa](easy_dsa/) | Crypto | `GPNCTF{MaYbe WE 5hOULd H4Ve hIR3D A pr0FesS1onal?}` |
 | [Fruit Market](fruit_market/) | Web3 / Blockchain | `GPNCTF{lOOk_mAm4_1_g0T_S0me_fruITs_a7_MY_J08}` |
@@ -14,4 +14,4 @@
 
 ---
 
-*All writeups authored by [e0 Security](https://e0sec.github.io/).*
+*All writeups authored by [e0 Security](https://e0sec.github.io).*
