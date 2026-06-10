@@ -78,7 +78,7 @@ Download /post-commit.sh from C2
 ```
 
 **C2 address obfuscation:**
-- Host IP is stored reversed in the source
+- Host IP is stored reversed in the source as `"441.81.861.291"`
 - Port is derived: `668381 XOR 669668 = 1337`
 
 ---
@@ -92,6 +92,15 @@ The downloaded `post-commit.sh` is base64-encoded and split across 30 shell vari
 3. Exfiltrate via `curl POST` to `192.168.18.144:1337/sync`
 
 This gives the attacker a continuous stream of source code and secrets from every future commit.
+
+---
+
+## Dead Ends
+
+Two rabbit holes worth noting:
+
+- **Empty SQLite database** — `api-gateway.db` is present but completely empty; migrations were never run, nothing to extract
+- **PDF/ZIP polyglot in node_modules** — a file that doubles as both a PDF and a ZIP archive, containing a `hint/hint.txt` entry that crashes on extraction; fabricated CRC, no recoverable content — a red herring
 
 ---
 
