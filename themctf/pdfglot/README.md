@@ -195,3 +195,11 @@ with pyzipper.AESZipFile('flag_2_.zip') as zf:
 ```
 THEM?!CTF{pygl0tt3d_fl4gg0}
 ```
+
+---
+
+## Author's Note
+
+After the CTF, challenge author **tegeda** confirmed in the writeups forum that `hint.txt` was intended to be recoverable — it should have contained an encoded hint via a base85→base64→morse→braille chain. However, the file was broken due to an authoring mistake, making it genuinely unrecoverable rather than an intentional rabbit hole.
+
+The solve path above (bypassing `hint.txt` entirely and reading the password from the PDF page content) was therefore the unintended but fully valid route.
