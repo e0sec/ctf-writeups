@@ -14,4 +14,4 @@
 
 ---
 
-*All writeups authored by [e0 Security](https://e0.security).*
+*All writeups authored by [e0 Security].*
