@@ -46,7 +46,7 @@ POST /blueprint/pwn
 
 ```
 GET /blueprint/pwn
-{"properties": {"flag": {"const": "GPNCTF{...}", "type": "string"}}}
+{"properties": {"flag": {"const": "GPNCTF{anD_ONe_0r_two_Rce5_147er_7H3y_8uiLt_H4pPIlY_evEr_Af73r}", "type": "string"}}}
 ```
 
 ---
