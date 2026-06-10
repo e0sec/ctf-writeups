@@ -3,7 +3,7 @@
 | Field | Details |
 |-------|---------|
 | **Challenge** | Ancient Signals |
-| **Platform** | themectf.com |
+| **Platform** | themctf.com |
 | **Category** | Reverse Engineering |
 | **Points** | 951 |
 | **Files** | `player.exe`, `transmission.dat` |
