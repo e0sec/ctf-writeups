@@ -3,7 +3,7 @@
 | Field | Details |
 |-------|---------|
 | **Challenge** | dddd |
-| **Platform** | themectf.com |
+| **Platform** | themctf.com |
 | **Category** | Web3 / Blockchain |
 | **Flag** | `THEM?!CTF{pr0vably_fa1r_d1cey_g4m3}` |
 
