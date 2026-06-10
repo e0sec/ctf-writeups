@@ -3,7 +3,7 @@
 | Field | Details |
 |-------|---------|
 | **Challenge** | pdfglot |
-| **Platform** | themectf.com |
+| **Platform** | themctf.com |
 | **Category** | Forensics / Steganography |
 | **Files** | `mistery.pdf`, `flag_2_.zip` |
 | **Tools** | Python, pyzipper, hashlib |
