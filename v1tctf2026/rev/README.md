@@ -1,111 +1,147 @@
-# chall.exe — v1t CTF 2026
+# tini_rev — v1t CTF 2026
 
 **Category:** Rev  
-**Flag:** `v1t{n0_dump_just_pain}`
+**Points:** 100  
+**Flag:** `v1t{^}`
 
 ---
 
 ## Overview
 
-A 38 KB PE32+ (x86-64) Windows executable presenting a "sealed input verifier": it reads a string, runs it through a bytecode VM, and prints `[+] accepted` or `[-] rejected`.
-
-The `strings` output is loaded with fake protection markers — Enigma Protector, WIBU-KEY, HASP, Sentinel, Marx Cryptobox, Denuvo, Nuitka, UPX, etc. — all fake PE section names added as misdirection. The real logic is a compact C program compiled with TCC (`chall_tcc_obfus.exe` is the original filename).
-
----
+A 904-byte ELF x86-64 binary with no section headers (corrupted section header size field). It reads a flag from stdin, uses the sum of its bytes as a decoding key, and renders a 10-row bitmap to stdout as `0`/`1` characters. The correct flag produces readable ASCII art.
 
 ## Analysis
 
-### PE layout
-
 ```
-.text        — actual code (~9 KB)
-.data        — strings + encrypted VM bytecode stream
-UPX0         — lookup table: alphabet + "SLAIDPUH" suffix
-.arch        — fake: contains "denuvo_atd"
-.rdata       — fake: contains "NUITKA_ONEFILE_PARENT"
-.enigma1/2, .vmp0-2, .winlice, .petite, .rlp, ...  — all 1-byte fake sections
-__wibu00/01  — fake WIBU-KEY section names
+$ file tini_rev
+tini_rev: ELF 64-bit LSB executable, x86-64, statically linked, corrupted section header size
+$ wc -c tini_rev
+904 tini_rev
 ```
 
-### Decrypting the VM bytecode stream
+No symbols, no libc — manually disassemble from the entry point (`0x400070`). The code fits in ~300 bytes and does exactly five things:
 
-The stream is stored encrypted in `.data`. Each byte is decoded via a FNV-like hash keyed on position and a hardcoded key byte `0xa7`:
+### 1 — Read flag from stdin
+
+```asm
+xor eax, eax       ; sys_read
+xor edi, edi       ; stdin
+lea rsi, [rsp+0x6200]
+mov edx, 0x100     ; up to 256 bytes
+syscall
+```
+
+### 2 — Compute checksum (sum of non-newline bytes)
+
+```asm
+.loop:
+    lodsb
+    cmp al, 0x0a   ; skip \n
+    je  .skip
+    cmp al, 0x0d   ; skip \r
+    je  .skip
+    movzx edx, al
+    add ebp, edx   ; ebp = checksum
+.skip:
+    loop .loop
+```
+
+`ebp` = sum of all input bytes (excluding newlines).
+
+### 3 — Decode 227 RLE words
+
+227 16-bit little-endian values are stored at offset `0x1b8` in the binary (file maps at `0x400000`). Each word has the checksum subtracted:
+
+```asm
+mov rsi, 0x4001b8
+mov ecx, 0xe3      ; 227 words
+.decode:
+    movzx eax, word [rsi]
+    add rsi, 2
+    sub eax, ebp   ; decoded = encoded - checksum
+    stosw
+    loop .decode
+```
+
+### 4 — Render bitmap via 10-byte key
+
+A 10-byte key at offset `0x37e` (`10 14 18 15 17 16 1a 12 12 1a`) drives an RLE renderer:
+
+- Outer loop: 10 iterations (one per key byte `k`)
+- Each iteration skips one decoded word, reads the next as both the initial bit (lsb → `'0'` or `'1'`) and the first run length
+- Inner loop runs `k−1` times: emits the current char `run_length` times, then flips `'0'`↔`'1'`
+- Total output width capped at 140 columns per row
+
+The first three decoded words are a header: at checksum **625** they equal `[10, 1, 1]` — matching the 10-row key length and 1×1 scale, confirming the correct checksum.
+
+### 5 — Write rows + exit
+
+The rendered rows (each followed by `\n`) are written to stdout, then `sys_exit(0)`.
+
+## Finding the Flag
+
+The correct checksum is **625** (from the header). The flag format is `v1t{...}`, so solve:
+
+```
+v + 1 + t + { + X + } = 625
+118 + 49 + 116 + 123 + X + 125 = 625
+X = 625 - 531 = 94  →  chr(94) = '^'
+```
+
+Flag: **`v1t{^}`**
+
+## Solver
 
 ```python
-def hash_pair(state, key):
-    h = (key * 0x45d9f3b ^ 0x6d2b79f5) & 0xffffffff
-    h = (h ^ (state * 0x9e3779b9)) & 0xffffffff
-    h = (h ^ (h >> 16)) & 0xffffffff
-    h = (h * 0x7feb352d) & 0xffffffff
-    h = (h ^ (h >> 15)) & 0xffffffff
-    h = (h * 0x846ca68b) & 0xffffffff
-    h = (h ^ (h >> 16)) & 0xffffffff
-    return (h ^ (h>>8) ^ (h>>16) ^ (h>>24)) & 0xff
+import struct
 
-stream = []
-for i, raw in enumerate(big_table):       # big_table at file offset 0x2fa8
-    v   = hash_pair(i, 0xa7)
-    x   = (raw ^ v) & 0xff
-    out = rotate_byte_right(x, (i ^ 0xa7) & 7)
-    stream.append(out)
+with open('tini_rev', 'rb') as f:
+    data = f.read()
+
+encoded = [struct.unpack_from('<H', data, 0x1b8 + i*2)[0] for i in range(0xe3)]
+key     = list(data[0x37e : 0x37e + 10])
+
+def render(checksum):
+    decoded  = [(w - checksum) & 0xffff for w in encoded]
+    idx      = 3
+    rows     = []
+    for k in key:
+        idx += 1
+        bit  = decoded[idx] & 1
+        al   = bit + 0x30        # '0' or '1'
+        rem  = 0x8c              # max 140 cols
+        edx  = k - 1
+        line = []
+        while edx > 0:
+            run = decoded[idx]; idx += 1
+            run = min(run, rem); rem -= run
+            line.extend([chr(al)] * run)
+            al ^= 1; edx -= 1
+        rows.append(''.join(line))
+    return rows
+
+# checksum 625 → header [10,1,1] → scale 1×1, 10 rows
+for row in render(625):
+    print(''.join('█' if c == '1' else ' ' for c in row))
 ```
 
-### VM opcode set
-
-The dispatcher at `0x402470` switches on a stream byte:
-
-| Opcode | Operation |
-|--------|-----------|
-| `0x5d` | Update internal accumulator B (irrelevant to checks) |
-| `0x4b` | `acc_a = input[N]` — load character N from user input |
-| `0x71` | `acc_a ^= D` |
-| `0x32` | `acc_a = (acc_a + D) & 0xff` |
-| `0x18` | `acc_a = rotate_left(acc_a, D)` |
-| `0xd4` | `acc_d |= acc_a ^ D` — single-char equality check |
-| `0xa9` | Cross-char check on two input indices |
-| `0xee` | Final check: `acc_d |= counter ^ D`; pass iff `acc_d == 0` |
-
-Each group of stream bytes encodes the transform pipeline for one character check:
+## Output
 
 ```
-5d <b>  4b <idx>  71 <X>  32 <Y>  18 <Z>  71 <W>  d4 <E>
+ ████            ████            ████            ████████████████████            ████████                ████                ████████
+ ████            ████            ████            ████████████████████            ████████   █            ████             █  ████████
+ ████        █   ████        ████████              █     ████    █               ████                ████    ████               █████
+███            ████        █████████                   ████                    █████           █   █████   ████                ████ ███
+█ █       █    ████           █████                    ████            ████████                ████            ████             █  ████████
+████ █          ████            █████                   ███  █          ████████                ████           █████             █  ████████
+    ████    ████      █         █ ██           █        ████                    ████               █                   █        █ ██
+    ████    ███     █           ████                    ████                    ████     █                                      ████
+       ████          █     ████████████                ████                    ████████                                    ███ ████     █
+        ████ █  █     █     █ ██████████                ███      █              ████████           █                      █ ████████
 ```
 
-Meaning: `rotate_left(((input[idx] ^ X) + Y) & 0xff, Z) ^ W == E`
-
-### Solving for the flag
-
-22 single-character constraints from `0xd4` opcodes, each independently invertible:
-
-```python
-def solve(ops, expected):
-    val = expected
-    for op, d in reversed(ops):
-        if op == 'xor':   val ^= d
-        elif op == 'rotl': val = rotate_byte_right(val, d)
-        elif op == 'add':  val = (val - d) & 0xff
-    return val
-```
-
-11 cross-character constraints from `0xa9` opcodes verify pairs using:
-
-```python
-def check_pair(c1, c2, i1, i2, b3):
-    s1 = ((c1 ^ ((b3+i1)&0xff)) + (c2 ^ ((b3+i2)&0xff))) & 0xff
-    v1 = rotate_left(s1, (b3^i1^i2)&7)
-    s2 = (c1*((b3&7)|1) + c2*(((b3>>3)&7)|1)) & 0xff
-    v2 = rotate_left(s2, (i1+i2+b3)&7)
-    return v1 ^ v2   # must equal b4
-```
-
-All 11 pair constraints are automatically satisfied by the 22 characters recovered from the single-char checks — no extra solving needed.
-
-The `0xee` final check passes because `counter_c` = 22 (`d4`) + 11 (`a9`) = 33 = `0x21`, matching the stream data byte.
+ASCII art of `v1t{^}` — confirms the flag.
 
 ---
 
-## Flag
-
-```
-v1t{n0_dump_just_pain}
-```
+**Flag:** `v1t{^}`
