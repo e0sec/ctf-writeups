@@ -7,13 +7,13 @@
 
 ## Process
 
-Visit `v1t.site/duck` — save the response (use `-L` to follow redirects):
+Visit `v1t.site/duck` — save the response (use `-L` to follow redirects) — the file is UTF-8 text with ANSI escape sequences, not a binary:
 
 ```
 curl -L v1t.site/duck -o duck
 ```
 
-Inspect the binary:
+Inspect the file:
 
 ```
 strings duck
