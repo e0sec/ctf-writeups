@@ -7,4 +7,4 @@
 | [Discord](discord/) | OSINT / Misc | 100 | `v1t{duckc0rd}` |
 | [HVL](hvl/) | Web / Misc | 100 | `v1t{g04t_mck_hvl}` |
 | [tiny](rev/tiny/) | Rev | 100 | `v1t{^}` |
-| [try](try/) | Rev | — | `v1t{n0_dump_just_pain}` |
+| [try](try/) | Rev | 100 | `v1t{n0_dump_just_pain}` |
