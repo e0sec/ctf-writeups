@@ -1,8 +1,11 @@
 # v1t CTF 2026
 
-| Challenge | Category | Points | Flag | Writeup |
-|-----------|----------|--------|------|---------|
-| Discord Flag | Duck | — | `v1t{duckc0rd}` | [discord/](discord/) |
-| HVL | Web / Misc | 100 | `v1t{g04t_mck_hvl}` | [hvl/](hvl/) |
-| tiny | Rev | 100 | `v1t{^}` | [tiny/](tiny/) |
-| try | Rev | — | `v1t{n0_dump_just_pain}` | [try/](try/) |
+| Challenge | Category | Points | Flag |
+|-----------|----------|--------|------|
+| [Curl the duck](curl_the_duck/) | Duck | 100 | `v1t{ducky_quacky}` |
+| [Diddy License Checker](diddy_license_checker/) | Misc | 100 | `v1t{435_f1b0_w3bs1t3}` |
+| [Atari 2600](atari-2600/) | Misc | 100 | `v1t{0_0}` |
+| [Discord](discord/) | Duck | 100 | `v1t{duckc0rd}` |
+| [HVL](hvl/) | Web | 100 | `v1t{g04t_mck_hvl}` |
+| [tiny](tiny/) | Rev | 100 | `v1t{^}` |
+| [try](try/) | Rev | 100 | `v1t{n0_dump_just_pain}` |
