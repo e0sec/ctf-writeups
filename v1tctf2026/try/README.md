@@ -1,4 +1,4 @@
-# chall.exe — v1t CTF 2026
+# try — v1t CTF 2026
 
 **Category:** Rev  
 **Flag:** `v1t{n0_dump_just_pain}`
