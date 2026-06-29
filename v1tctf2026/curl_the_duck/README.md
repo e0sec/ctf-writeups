@@ -7,10 +7,10 @@
 
 ## Process
 
-Visit `v1t.site/duck` — save the response:
+Visit `v1t.site/duck` — save the response (use `-L` to follow redirects):
 
 ```
-curl v1t.site/duck -o duck
+curl -L v1t.site/duck -o duck
 ```
 
 Inspect the binary:
@@ -31,7 +31,7 @@ $ curl v1t.site/flag    -> Flag for v1t ctf 2026
 Fetch the flag endpoint:
 
 ```
-curl v1t.site/flag -o flag
+curl -L v1t.site/flag -o flag
 ```
 
 The raw file wraps every character in ANSI color codes — the terminal renders colored art but the flag text is unreadable as-is. Strip the escape sequences:
