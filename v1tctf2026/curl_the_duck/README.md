@@ -13,7 +13,7 @@ Fetch the duck page (use `-L` to follow redirects):
 curl -L v1t.site/duck -o duck
 ```
 
-`cat duck` renders a braille duck, a V1T logo, and a commands panel:
+`cat duck` renders a duck drawn with Unicode Braille dot characters (⣿, ⠟, …), a V1T logo, and a commands panel:
 
 ```
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
