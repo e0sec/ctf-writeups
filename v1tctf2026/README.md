@@ -1,7 +1,7 @@
 # curl the duck — v1t CTF 2026
 
 **Category:** Misc  
-**Flag:** `v1t{duck_quack_quack}`
+**Flag:** `v1t{ducky_quacky}`
 
 ---
 
@@ -60,8 +60,8 @@ Result:
                                                                                ░░░░░░                 ░░░░░                                            ░░░░░░           
 ```
 
-Block letters spell out: `v1t{duck_quack_quack}`
+Block letters spell out: `v1t{ducky_quacky}`
 
 ---
 
-**Flag:** `v1t{duck_quack_quack}`
+**Flag:** `v1t{ducky_quacky}`
