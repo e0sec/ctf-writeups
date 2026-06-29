@@ -1,6 +1,6 @@
 # DIDDY LICENSE CHECKER — v1t CTF 2026
 
-**Category:** Giggle  
+**Category:** Misc  
 **Points:** 100  
 **Flag:** `v1t{435_f1b0_w3bs1t3}`
 
