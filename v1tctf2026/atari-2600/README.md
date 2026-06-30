@@ -37,7 +37,6 @@ $ stella v1t.bas.bin
 
 The game is a small platformer/maze. The score counter at the bottom of the screen shows all zeros — **`0 0 0 0 0 0 0`**. The flag is read from that score display.
 
-![Stella screenshot showing the game and zero score](screenshot.png)
 
 ## What's Inside
 
