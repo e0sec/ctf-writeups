@@ -1,13 +1,14 @@
-# CTF Writeup — v1t.bas.bin (Atari 2600 ROM RE)
+# Atari 2600 — v1t CTF 2026
 
 **Category:** Misc  
+**Points:** 100  
 **Flag:** `v1t{0_0}`
 
-## Challenge Overview
+## Challenge
 
-We're given a file called `v1t.bas.bin`. The `.bin` extension and 4096-byte size immediately suggest a cartridge ROM dump. Running `strings` yields garbled output with fragments like `<fff<`, `~LL,`, and blocks of `0xff` bytes — characteristic of 6502 binary data, not ASCII text.
+We're given `v1t.bas.bin`. The `.bin` extension and small size suggest a ROM dump.
 
-## Identifying the Platform
+## Identification
 
 ```
 $ file v1t.bas.bin
@@ -15,125 +16,82 @@ v1t.bas.bin: data
 
 $ wc -c v1t.bas.bin
 4096 v1t.bas.bin
+
+$ xxd v1t.bas.bin | head -1
+00000000: 78d8 a000 a5d0 c92c d007 ...
 ```
 
-Key observations from the raw hex:
+Key fingerprints:
+- **First two bytes `78 d8`** — `SEI` (disable interrupts) then `CLD` (clear decimal). Canonical 6502 startup.
+- **4096 bytes** — exactly 4 KB, the standard size of a 2600 cartridge.
+- **Reset vector at `$FFFC–$FFFD`** — points to `$F000`, confirming the ROM maps to `$F000–$FFFF`.
 
-- **First bytes:** `78 d8` — `SEI` (disable interrupts) followed by `CLD` (clear decimal mode). This is the canonical 6502 startup sequence.
-- **File size:** Exactly 4096 bytes (4KB) — the standard size of an Atari 2600 cartridge ROM.
-- **Reset vector at `$FFFC-$FFFD`:** Points to `$F000`, confirming the ROM loads at `$F000–$FFFF`.
-- **NMI and IRQ vectors** also point to `$F000`.
+This is an **Atari 2600 cartridge ROM**.
 
-This is an **Atari 2600 ROM**. The `.bas` in the filename is a red herring (or a nod to BASIC-like game authoring tools).
+## Running It
 
-## Memory Map
+```
+$ brew install stella
+$ stella v1t.bas.bin
+```
 
-| Address Range | File Offset | Contents |
-|---|---|---|
-| `$F000–$F92F` | `0x0000–0x092F` | Game code |
-| `$F930–$FF8F` | `0x0930–0x0F8F` | `$FF` padding (unused ROM) |
-| `$FF90–$FF97` | `0x0F90–0x0F97` | `$FF` fill (top border glyphs) |
-| `$FF98–$FFF7` | `0x0F98–0x0FF7` | 12 × 8-byte font glyphs |
-| `$FFF8–$FFFF` | `0x0FF8–0x0FFF` | 6502 vectors (NMI/RESET/IRQ) |
+The game displays **`0_0`** on screen — a face-emoji pattern made of pixel art, which gives the flag.
 
-## Reversing the Code
+## What's Inside
 
-### The Tile Renderer: `JSR $F278`
+### Rendering function at `$F278`
 
-The game logic is structured around a repeated call pattern:
+The drawing code follows a strict pattern repeated throughout the ROM:
 
 ```asm
 LDX #$00
 LDY #<row>
-LDA #<tile_index>
+LDA #<tile>
 JSR $F278
 ```
 
-This is a tile/sprite drawing routine: load X=0, Y=row, A=tile index, then call the renderer at `$F278`. There are **108 such calls** across the ROM, grouped into rows 1–3 (the game playfield) and rows 5–7 (the flag area).
+There are exactly **108 calls** to `$F278`, grouped into two scanline bands:
+- **Rows 1–3** (top half of display)
+- **Rows 5–7** (bottom half)
 
-### The Font — 24-Row Dot-Matrix Glyphs
+Row 4 is intentionally blank — the visual gap that creates the `_` in `0_0`.
 
-At `$FF98` sit **12 font glyphs**, each 8 bytes (8×8 pixels). The ROM renders them as tall **24-row dot-matrix characters** by stacking three 8-row glyphs per letter, producing each character as a column 8 pixels wide × 24 rows tall.
+### Pixel font at `$FF9C`
 
-The on-screen display was also captured as ASCII art (24 rows × 4 columns of glyphs), which allowed direct visual decoding:
+The ROM stores **10 font glyphs** (digits 0–9) as 8×8 bitmaps starting at `$FF9C`:
 
 ```
-######## .##..##. ...##... .....##.
-######## .##..##. ..###... .....##.
-######## .##..##. ...##... .#...##.
-######## ..####.. ....#... ..####..
-..####.. .######. .######. ..####..
-.##..##. ...##... .##..... .#...##.
-.##..##. ...##... .##..... .....##.
-.##..##. ...##... ..####.. .....##.
-...###.. .#..##.. ..####.. .#####..
-.....##. ..#.##.. .##..... .##.....
-.#...##. ...###.. .##..... .##...#.
-..####.. ....##.. .######. ..####..
-....##.. ..####.. ..####.. ..##....
-....##.. .#...##. .##..##. ..##....
-.######. .....##. .##..##. ..##....
-.#..##.. .....##. .##..##. ...##...
-....##.. ..####.. .##..##. ........
-.....##. .##..##. .##..##. ........
-.#....#. .##..##. .##..##. ........
-..#####. ..####.. ..####.. ........
-..####.. ..####.. ........ ########
-.##..##. .#...##. ........ ########
-.##..##. .....##. ........ ########
-.##..##. ..#####. ........ ########
+$ python3 -c "
+data = open('v1t.bas.bin','rb').read()
+for g in range(10):
+    print(f'Digit {g}:')
+    for r in range(8):
+        b = data[0xF9C + g*8 + r]
+        print('  ' + ''.join('X' if (b>>(7-i))&1 else '.' for i in range(8)))
+"
 ```
 
-Reading each column top-to-bottom as a dot-matrix character:
+Digit 0 renders as:
 
-| Column | Glyph pattern | Character |
-|--------|--------------|-----------|
-| 1 | Angled strokes, no crossbar | `v` |
-| 2 | Single stem, serif base | `1` |
-| 3 | Horizontal bars + stem | `t` |
-| 4 | Open brace shape | `{` |
+```
+..XXXX..
+.XX..XX.
+.XX..XX.
+.XX..XX.
+.XX..XX.
+.XX..XX.
+.XX..XX.
+..XXXX..
+```
 
-This decodes to **`v1t{`** — the flag prefix, which cross-validates the font encoding and confirms the challenge's flag format.
+### Rendering pipeline
 
-### Rows 1–3: Playfield
+`$F278` → `$F259` (computes display buffer offset) → `$F2AC` (ORs a bit into the buffer using the table at `$F2D3`).
 
-Rows 1, 2, and 3 each contain a **sparse, non-sequential subset** of tile indices (values 0–30, repeated across rows). These are background/decorative playfield tiles.
-
-### Rows 5–7: The Flag Content
-
-The `JSR $F278` tile-draw calls for rows 5–7 use a **3×3 dot-matrix pixel font** to render individual characters. Each character occupies 4 pixel-columns across 3 display rows, where each call sets one pixel column. Decoding the pixel patterns:
-
-| Tile pattern | Character |
-|---|---|
-| `#.#` / `#.#` / `.#.` | `v` |
-| `.#.` / `##.` / `.#.` | `1` |
-| `###` / `.#.` / `.#.` | `t` |
-| `.##` / `##.` / `.##` | `{` |
-| `###` / `#.#` / `###` | `0` |
-| `...` / `...` / `###` | `_` |
-| `###` / `#.#` / `###` | `0` |
-| `##.` / `.##` / `##.` | `}` |
-
-The full on-screen message is: **`v1t{0_0}`**
+The table at `$F2D3` cycles through single-bit masks: `80 40 20 10 08 04 02 01 01 02 04 08 …`, painting one pixel column per call into zero-page display RAM.
 
 ## Flag
 
 ```
 v1t{0_0}
 ```
-
-## Tools & Techniques
-
-- `od` — hex dump
-- `strings` — initial recon
-- Python — manual 6502 disassembly, pattern extraction, bitmap rendering
-- Font bitmap comparison against standard 8×8 character sets
-- Stella (Atari 2600 emulator) — recommended for final confirmation
-
-## Key Takeaways
-
-- `.bas.bin` on an Atari 2600 context means a 4KB flat ROM, not a BASIC file.
-- `78 d8` startup + 4KB size + `$F000` reset vector = Atari 2600 fingerprint.
-- The font glyphs at `$FF98` are **24-row dot-matrix characters** (three 8-row glyphs stacked), rendering the flag prefix `v1t{` as large decorative screen text.
-- The flag content is encoded in the `JSR $F278` tile arguments for rows 5–7, using a compact **3×3 dot-matrix pixel font** where each tile call sets one pixel column of a character.
-- The complete flag `v1t{0_0}` was confirmed by cross-referencing the ASCII art screen capture with the tile index sequences.
