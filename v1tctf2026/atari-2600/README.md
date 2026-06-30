@@ -35,7 +35,9 @@ $ brew install stella
 $ stella v1t.bas.bin
 ```
 
-The game displays **`0_0`** on screen — a face-emoji pattern made of pixel art, which gives the flag.
+The game is a small platformer/maze. The score counter at the bottom of the screen shows all zeros — **`0 0 0 0 0 0 0`**. The flag is read from that score display.
+
+![Stella screenshot showing the game and zero score](screenshot.png)
 
 ## What's Inside
 
@@ -51,29 +53,15 @@ JSR $F278
 ```
 
 There are exactly **108 calls** to `$F278`, grouped into two scanline bands:
-- **Rows 1–3** (top half of display)
+- **Rows 1–3** (top half)
 - **Rows 5–7** (bottom half)
-
-Row 4 is intentionally blank — the visual gap that creates the `_` in `0_0`.
 
 ### Pixel font at `$FF9C`
 
-The ROM stores **10 font glyphs** (digits 0–9) as 8×8 bitmaps starting at `$FF9C`:
+The ROM stores **10 font glyphs** (digits 0–9) as 8×8 bitmaps starting at `$FF9C`, used to render the score digits:
 
 ```
-$ python3 -c "
-data = open('v1t.bas.bin','rb').read()
-for g in range(10):
-    print(f'Digit {g}:')
-    for r in range(8):
-        b = data[0xF9C + g*8 + r]
-        print('  ' + ''.join('X' if (b>>(7-i))&1 else '.' for i in range(8)))
-"
-```
-
-Digit 0 renders as:
-
-```
+Digit 0:
 ..XXXX..
 .XX..XX.
 .XX..XX.
@@ -86,9 +74,7 @@ Digit 0 renders as:
 
 ### Rendering pipeline
 
-`$F278` → `$F259` (computes display buffer offset) → `$F2AC` (ORs a bit into the buffer using the table at `$F2D3`).
-
-The table at `$F2D3` cycles through single-bit masks: `80 40 20 10 08 04 02 01 01 02 04 08 …`, painting one pixel column per call into zero-page display RAM.
+`$F278` → `$F259` (computes display buffer offset) → `$F2AC` (ORs a single bit into zero-page display RAM using the bitmask table at `$F2D3`: `80 40 20 10 08 04 02 01 01 02 04 08 …`).
 
 ## Flag
 
