@@ -4,6 +4,7 @@
 O CyberGame sa dá rozprávať z mnohých strán. Ja vám poviem, aké to je hrať. Na tohtoročnom CyberGame som skončil na 8. mieste v slovenskom poradí a prednáška je osobnou výpoveďou o tom, čo ma do súťaže dostalo, čo ma tam držalo, kde som narazil na strop a čo som objavil až v záverečných kolách. Pozrieme sa aj na to, ako generatívna AI mení dynamiku súťaže – nie ako hrozba, ale ako nová premenná, s ktorou musia rátať hráči aj tvorcovia výziev. Ak hľadáte inšpiráciu pre svojich študentov alebo sami zvažujete vyskúšať niečo podobné, táto prednáška je pre vás.
 
 📄 Prednáška (PDF): https://github.com/e0sec/ctf-writeups/blob/main/ossconf/ctf_talk_slovak.pdf
+
 📄 Runsheet (PDF – ENG): https://github.com/e0sec/ctf-writeups/blob/main/ossconf/ctf-talk-runsheet.pdf
 
 ---
