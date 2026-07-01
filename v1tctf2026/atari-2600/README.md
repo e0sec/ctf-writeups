@@ -75,6 +75,9 @@ Digit 0:
 
 `$F278` → `$F259` (computes display buffer offset) → `$F2AC` (ORs a single bit into zero-page display RAM using the bitmask table at `$F2D3`: `80 40 20 10 08 04 02 01 01 02 04 08 …`).
 
+<img width="718" height="742" alt="obrázok" src="https://github.com/user-attachments/assets/ced787c1-c07b-4884-a645-91a0374a906a" />
+
+
 ## Flag
 
 ```
