@@ -100,4 +100,4 @@ Rozsiahla (416-stranová) učebnica od piatich šampiónov locksportu (Jos Weyer
 
 ---
 
-*Materiál pripravil e0 pre workshop „CyberGame očami hráča“.*
+*Materiál pripravil e1 pre workshop „CyberGame očami hráča“.*
