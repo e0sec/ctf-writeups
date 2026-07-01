@@ -8,7 +8,7 @@ O CyberGame sa dá rozprávať z mnohých strán. Ja vám poviem, aké to je hra
 
 ---
 
-## Ivan Oravec (e1): Hacking seminár a organizované riešenie kryptografických hlavolamov – materiály na workshop
+## Hacking seminár a organizované riešenie kryptografických hlavolamov – materiály na workshop
 
 Na seminári uvediem účastníkov do sveta fenoménov známych pod skratkou CTF (Capture The Flag) a ARG (Alternate Reality Games), ktoré hravou formou sprostredkúvajú vedomosti z oblasti kryptografie a počítačovej bezpečnosti. Súčasťou seminára bude možnosť si takéto hádanky priamo vyskúšať, teda ponoriť sa do procesu analýzy a následného nájdenia tzv. flagu (vlajky), ktorá je v tomto svete dôkazom úspechu. Konzultovať postup riešenia a otázky klásť mi môžete a ja sa na ne budem snažiť odpovedať. Pre tých, ktorí si budú chcieť oddýchnuť od počítača bude pripravený aj vzrušujúci hands-on v podobe „lock-picking“ kútika, kde si môžete vyskúšať otváranie zámku bez kľúča tzv. nedeštruktívnymi metódami. Všetko v etickom rámci najmä so snahou upozorniť na bezpečnostné nedostatky bežne používaných systémov.
 
