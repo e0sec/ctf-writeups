@@ -42,8 +42,6 @@ Platforma organizácie The Cyber Trust ponúkajúca celú sériu hier a aktivít
 
 ## 🛠️ Nástroje na riešenie CTF hádaniek
 
-- **ChatGPT** – https://chatgpt.com/ — AI asistent užitočný pri brainstormingu, dešifrovaní kontextu alebo overovaní hypotéz počas riešenia.
-- **Claude** – https://claude.ai/new — AI asistent od Anthropic, vhodný napríklad na analýzu kódu, logiky hádanky alebo písanie writeupov.
 - **CyberChef** – https://gchq.github.io/CyberChef/ — „švajčiarsky nožík“ pre kódovanie/dekódovanie, šifrovanie, hashovanie a analýzu dát priamo v prehliadači. Nástroj číslo jeden pri riešení CTF challengov.
 - **Aperisolve** – https://www.aperisolve.com/ — online nástroj na steganografickú analýzu obrázkov (LSB analýza, metadáta, extrakcia skrytých súborov a pod.).
 - **Boxentriq** – https://www.boxentriq.com/ — zbierka nástrojov na identifikáciu a lúštenie rôznych typov šifier a kódov.
