@@ -1,1 +1,0 @@
-These files are the presentation and the runbook I used for my talk at Open Source Software Conference in Zilina. They're slightly misaligned - the runbook is originally for a 30 min talk but later my window was shortened to 15 min so I basically just skipped some parts or trimmed them.
