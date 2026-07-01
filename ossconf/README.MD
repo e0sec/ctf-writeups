@@ -1,6 +1,14 @@
-# CyberGame očami hráča – materiály na workshop
 
-**Ivan Oravec (e1): Hacking seminár a organizované riešenie kryptografických hlavolamov**
+**Názov:** CyberGame očami hráča – čo mi dala kybernetická súťaž a čo môže dať vašim študentom
+
+O CyberGame sa dá rozprávať z mnohých strán. Ja vám poviem, aké to je hrať. Na tohtoročnom CyberGame som skončil na 8. mieste v slovenskom poradí a prednáška je osobnou výpoveďou o tom, čo ma do súťaže dostalo, čo ma tam držalo, kde som narazil na strop a čo som objavil až v záverečných kolách. Pozrieme sa aj na to, ako generatívna AI mení dynamiku súťaže – nie ako hrozba, ale ako nová premenná, s ktorou musia rátať hráči aj tvorcovia výziev. Ak hľadáte inšpiráciu pre svojich študentov alebo sami zvažujete vyskúšať niečo podobné, táto prednáška je pre vás.
+
+📄 Prednáška (PDF): https://github.com/e0sec/ctf-writeups/blob/main/ossconf/ctf_talk_slovak.pdf
+📄 Runsheet (PDF – ENG): https://github.com/e0sec/ctf-writeups/blob/main/ossconf/ctf-talk-runsheet.pdf
+
+---
+
+**Ivan Oravec (e1): Hacking seminár a organizované riešenie kryptografických hlavolamov** – materiály na workshop
 Email: [e0sec@proton.me](mailto:e0sec@proton.me)
 
 Na seminári uvediem účastníkov do sveta fenoménov známych pod skratkou CTF (Capture The Flag) a ARG (Alternate Reality Games), ktoré hravou formou sprostredkúvajú vedomosti z oblasti kryptografie a počítačovej bezpečnosti. Súčasťou seminára bude možnosť si takéto hádanky priamo vyskúšať, teda ponoriť sa do procesu analýzy a následného nájdenia tzv. flagu (vlajky), ktorá je v tomto svete dôkazom úspechu. Konzultovať postup riešenia a otázky klásť mi môžete a ja sa na ne budem snažiť odpovedať. Pre tých, ktorí si budú chcieť oddýchnuť od počítača bude pripravený aj vzrušujúci hands-on v podobe „lock-picking“ kútika, kde si môžete vyskúšať otváranie zámku bez kľúča tzv. nedeštruktívnymi metódami. Všetko v etickom rámci najmä so snahou upozorniť na bezpečnostné nedostatky bežne používaných systémov.
