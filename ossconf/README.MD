@@ -54,7 +54,7 @@ Platforma organizácie The Cyber Trust ponúkajúca celú sériu hier a aktivít
 Nasledujúce zdroje slúžia výhradne na vzdelávacie a etické účely (tzv. locksport) – teda na precvičovanie na vlastných zámkoch a pochopenie ich slabín, nie na neoprávnené vniknutie.
 
 ### MIT Guide to Lock Picking
-🔗 http://www.withoutakey.com/pdf/MITLockGuide.pdf
+🔗 https://archive.org/details/mit-guide-to-lock-picking-v05/mode/2up
 
 Klasický a voľne dostupný úvodný text (autor „Ted the Tool“), ktorý zrozumiteľne vysvetľuje princípy valcových zámkov (pin tumbler) a základnú techniku „single pin picking“. Skvelý štart pre každého, kto sa chce dozvedieť, ako zámok skutočne funguje zvnútra.
 
