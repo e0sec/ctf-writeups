@@ -112,7 +112,7 @@ dump to **write** a `.tpl` file into `/app/tpl/`, then use `/render` to
 ```
 CONFIG SET dir /app/tpl
 CONFIG SET dbfilename pwn.tpl
-SET x "<payload>"
+SET x <payload>
 SAVE
 ```
 
@@ -137,7 +137,7 @@ With arbitrary (mostly) intact content landing in a rendered template, the
 natural next test is a classic SSTI fingerprint:
 
 ```
-SET x "before {{7*7}} after"
+SET x {{7*7}}
 SAVE
 ```
 
@@ -176,7 +176,7 @@ The key realization: **Jinja2 exposes Flask's `request` object by default**
 in the template context. Testing:
 
 ```
-SET x "{{request}}"
+SET x {{request}}
 ```
 
 returned:
