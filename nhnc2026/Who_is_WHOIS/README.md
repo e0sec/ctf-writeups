@@ -86,7 +86,7 @@ drop that content on disk.
 
 ## 3. Finding a file-read primitive: the `/render` endpoint
 
-Browsing the target manually turned up a second endpoint:
+Browsing the target manually turned up a second endpoint in the About page:
 
 ```
 GET /render?tpl=<name>
