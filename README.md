@@ -1,4 +1,4 @@
-# CTF Writeups — e0 Security
+# CTF Writeups — e1
 
 | Competition | Date | Result |
 |-------------|------|--------|
@@ -11,4 +11,4 @@
 
 ---
 
-*All writeups authored by [e0 Security](https://e0sec.github.io).*
+*All writeups authored by [e1](mailto:e0sec@proton.me).*
