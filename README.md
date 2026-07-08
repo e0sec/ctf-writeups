@@ -3,7 +3,7 @@
 | Competition | Date | Result |
 |-------------|------|--------|
 | [No Hack No CTF 2026](nhnc2026/Who_is_WHOIS) | 4-6 July 2026 | 🥇 [126th](https://ctftime.org/event/3180) / 844 teams — captained by Existing!?! and 0xPrime | 
-| R3CTF 2026 | 4-6 July 2026 | 🥇 [162nd](https://ctftime.org/event/3149) / 920 teams — captained by Existing!?! and 0xPrime |
+| R3CTF 2026 | 4-6 July 2026 | 🥇 [159th](https://ctftime.org/event/3149) / 917 teams — captained by Existing!?! and 0xPrime |
 | [v1t CTF 2026](v1tctf2026/) | 27–28 June 2026 | 🥇 [112th](https://ctftime.org/event/3249) / 952 teams — captained by 0xPrime and e1 |
 | Riff Hack 2026 | 19–22 June | 🥇 [103rd](https://ctftime.org/event/3297) / 514 teams — captained by 0xPrime and e1 |
 | [Operation Heist CTF 2026](operationheist2026/) | 13–14 June 2026 | 🥇 [17th](https://ctftime.org/event/3327) / — captained by e1 |
