@@ -155,8 +155,10 @@ Firefox session.
 
 ## Full exploit
 
+Full script: [`exploit.js`](exploit.js)
+
 ```js
-// exploit.js  (trimmed — see repo for full script)
+// exploit.js  (trimmed — see linked file above for the full script)
 const inlinePayload = `(function(){
   function lt(a,b){ return Math.sign(a-b) === -1; }
   function gte(a,b){ return Math.sign(a-b) !== -1; }
