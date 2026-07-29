@@ -5,6 +5,7 @@ Captained team **e0sec** to **319th place** / 6744 teams in HackTheBox's Cyber A
 | Challenge | Category | Answers/Flag |
 |-----------|----------|------|
 | [Wrong Stamp](wrong_stamp/) | Cloud / DFIR (AWS CloudTrail) | 8/8 investigation questions answered |
+| [Decryption Strategy](decryption_strategy/) | Forensics (PCAP + Procmon + disk) | 8/8 investigation questions answered |
 
 ---
 
