@@ -2,6 +2,7 @@
 
 | Competition | Date | Result |
 |-------------|------|--------|
+| [Cyber Apocalypse CTF 2026 — The Salt Crown](saltcrown2026/) | 24–29 July 2026 | 🥇 319th / 6744 teams — captained by e1 |
 | [No Hack No CTF 2026](nhnc2026/Who_is_WHOIS) | 4-6 July 2026 | 🥇 [126th](https://ctftime.org/event/3180) / 844 teams — captained by Existing!?! and 0xPrime | 
 | R3CTF 2026 | 4-6 July 2026 | 🥇 [159th](https://ctftime.org/event/3149) / 917 teams — captained by Existing!?! and 0xPrime |
 | [v1t CTF 2026](v1tctf2026/) | 27–28 June 2026 | 🥇 [112th](https://ctftime.org/event/3249) / 952 teams — captained by 0xPrime and e1 |
