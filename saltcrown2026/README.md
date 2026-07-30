@@ -10,6 +10,8 @@
 | [Thermal Receipt](hw_thermal_receipt/) | Hardware | `HTB{th3rm4l_j0urn4l_r3c4ll_9cdb6edfff18039aca883569edd8afd9}` |
 | [Massa Gold](massagold/) | Web | `HTB{m3554g3_1n_7h3_cu570dy_ch41n_bad9dfb6b21cae512bc17925c6d226b8}` |
 | [Obligation Indexer](ai_ml_obligation_indexer/) | AI/ML | `HTB{l34k3d_d3b7s_thr0ugh_m3m0ry_p01s0n1ng}` |
+| [The Emptiness Machine](pwn_the_emptiness/) | Pwn | `HTB{f4ll1ng_4_th3_pr0m1s3_0f_th3_3mptin355_m4ch1ne :)_c3665f0e965d024f9d63c6c535e117bb}` |
+| [Withered Registry](sec_withered_registry/) | Secure Coding | `HTB{h0us3_0f_3mb3rs_4nd_4sh_25e31844d0486234e2a173082a100db2}` |
 | [Words From the Past](pwn_words_from_the_past/) | Pwn | `HTB{...}` *(obtained on remote)* |
 | [Wrong Stamp](wrong_stamp/) | Cloud / DFIR | *(8 answers — see writeup)* |
 
