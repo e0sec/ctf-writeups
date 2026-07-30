@@ -19,6 +19,7 @@
 | [Proofmark](proofmark/) | Mobile (Android / Godot) | `HTB{p3rf3ct_f4c3_tru3_sp1n3}` |
 | [First Mark](first-mark/) | Reverse Engineering | `HTB{cut_f0r_th3_P1NT}` |
 | [Overstrike](overstrike/) | Mobile (Android / Godot) | `HTB{0v3rstr1k3_r3cut_th3_w0rld_s34l_by_f0rg1ng_th3_mark}` |
+| [The Forged Signet](qnt_the_forged_signet/) | Quantum | `HTB{th3_f1rst_m4rk_1s_4_h1dd3n_x0r_p3r10d_bec6b1c9b3f37cf299f3a921a74d2a72}` |
 
 ---
 
