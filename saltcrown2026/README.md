@@ -12,6 +12,7 @@
 | [Obligation Indexer](ai_ml_obligation_indexer/) | AI/ML | `HTB{l34k3d_d3b7s_thr0ugh_m3m0ry_p01s0n1ng}` |
 | [The Emptiness Machine](pwn_the_emptiness/) | Pwn | `HTB{f4ll1ng_4_th3_pr0m1s3_0f_th3_3mptin355_m4ch1ne :)_c3665f0e965d024f9d63c6c535e117bb}` |
 | [Withered Registry](sec_withered_registry/) | Secure Coding | `HTB{h0us3_0f_3mb3rs_4nd_4sh_25e31844d0486234e2a173082a100db2}` |
+| [The Coin That Won't Land](qnt_the_coin_that_wont_land/) | Quantum | `HTB{epr_0ath_0p3ns_b0th_w4ys_68e2f5a8d596f78dffca21e106ebd619}` |
 | [Words From the Past](pwn_words_from_the_past/) | Pwn | `HTB{...}` *(obtained on remote)* |
 | [Wrong Stamp](wrong_stamp/) | Cloud / DFIR | *(8 answers — see writeup)* |
 | [Proofmark](proofmark/) | Mobile (Android / Godot) | `HTB{p3rf3ct_f4c3_tru3_sp1n3}` |
