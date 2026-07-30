@@ -3,6 +3,7 @@
 | Challenge | Category | Flag |
 |-----------|----------|------|
 | [Forked Tongue](ai_ml_forked_tongue/) | AI/ML | `HTB{th3_h3r4ld_l13s_but_th3_m3rg35_d0nt}` |
+| [Fractured Seal](crypto_fractured_seal/) | Crypto | `HTB{r3c0v3r1ng_RSA_k3ys___l1k3___Me0w___me0o00o0o0w___Me0w}` |
 | [The Counting House](The-Counting-House/) | Quantum | `HTB{...}` *(instance expired — full solve confirmed)* |
 | [Caldrin's Day Away](bc_caldrins-day-away/) | Blockchain | `HTB{inquir3y_0ne_c4ldr1n_s0lv3d_b6c49a8fc220ed107411efbb725ce5ae}` |
 | [Decryption Strategy](decryption_strategy/) | Forensics | *(8 answers — see writeup)* |
