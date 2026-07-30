@@ -17,6 +17,7 @@
 | [Wrong Stamp](wrong_stamp/) | Cloud / DFIR | *(8 answers — see writeup)* |
 | [Proofmark](proofmark/) | Mobile (Android / Godot) | `HTB{p3rf3ct_f4c3_tru3_sp1n3}` |
 | [First Mark](first-mark/) | Reverse Engineering | `HTB{cut_f0r_th3_P1NT}` |
+| [Overstrike](overstrike/) | Mobile (Android / Godot) | `HTB{0v3rstr1k3_r3cut_th3_w0rld_s34l_by_f0rg1ng_th3_mark}` |
 
 ---
 
