@@ -15,6 +15,7 @@
 | [Words From the Past](pwn_words_from_the_past/) | Pwn | `HTB{...}` *(obtained on remote)* |
 | [Wrong Stamp](wrong_stamp/) | Cloud / DFIR | *(8 answers — see writeup)* |
 | [Proofmark](proofmark/) | Mobile (Android / Godot) | `HTB{p3rf3ct_f4c3_tru3_sp1n3}` |
+| [First Mark](first-mark/) | Reverse Engineering | `HTB{cut_f0r_th3_P1NT}` |
 
 ---
 
