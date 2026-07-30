@@ -9,6 +9,7 @@
 | [Line Tap](hw_line_tap/) | Hardware / ICS | `HTB{r7u_l1n3_74p_5n4p5h07_ea905897752d505be8589d086eeffbfd}` |
 | [Thermal Receipt](hw_thermal_receipt/) | Hardware | `HTB{th3rm4l_j0urn4l_r3c4ll_9cdb6edfff18039aca883569edd8afd9}` |
 | [Massa Gold](massagold/) | Web | `HTB{m3554g3_1n_7h3_cu570dy_ch41n_bad9dfb6b21cae512bc17925c6d226b8}` |
+| [Obligation Indexer](ai_ml_obligation_indexer/) | AI/ML | `HTB{l34k3d_d3b7s_thr0ugh_m3m0ry_p01s0n1ng}` |
 | [Words From the Past](pwn_words_from_the_past/) | Pwn | `HTB{...}` *(obtained on remote)* |
 | [Wrong Stamp](wrong_stamp/) | Cloud / DFIR | *(8 answers — see writeup)* |
 
