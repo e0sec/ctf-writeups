@@ -14,6 +14,7 @@
 | [Withered Registry](sec_withered_registry/) | Secure Coding | `HTB{h0us3_0f_3mb3rs_4nd_4sh_25e31844d0486234e2a173082a100db2}` |
 | [Words From the Past](pwn_words_from_the_past/) | Pwn | `HTB{...}` *(obtained on remote)* |
 | [Wrong Stamp](wrong_stamp/) | Cloud / DFIR | *(8 answers — see writeup)* |
+| [Proofmark](proofmark/) | Mobile (Android / Godot) | `HTB{p3rf3ct_f4c3_tru3_sp1n3}` |
 
 ---
 
