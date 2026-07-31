@@ -36,4 +36,4 @@
 
 ---
 
-*All writeups authored by [e1](mailto:e0sec@proton.me), drafted and formatted with AI assistance.*
+*All writeups authored by [e1](mailto:e0sec@proton.me), with substantial AI assistance in analysis and writing.*

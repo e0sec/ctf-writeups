@@ -13,4 +13,4 @@ Captained team **e0_** to **[17th place](https://ctftime.org/event/3327)** in Op
 
 ---
 
-*All writeups authored by [e0 Security](https://e0sec.github.io), drafted and formatted with AI assistance.*
+*All writeups authored by [e0 Security](https://e0sec.github.io), with substantial AI assistance in analysis and writing.*
