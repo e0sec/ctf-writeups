@@ -31,6 +31,8 @@
 | [The Hollow Courier](sec_hollow_courier/) | Secure Coding | *(IP spoofing / broken access control — see writeup)* |
 | [crownspire-deploy](fsc_force_push/) | Forensics | `HTB{th3_r3l1qu4ry_n3v3r_f0rg3ts}` |
 | [ringtrue](rev_ringtrue/) | Reverse Engineering | `HTB{h3y_s1gn3t_1_4m_y0ur_k1ng}` |
+| [The Compressed Truth](fsc_the_compressed_truth/) | Forensics | *(7 answers — see writeup)* |
+| [The Corroded Crown](pwn_the_corroded_crown/) | Pwn | `HTB{...}` *(obtained on remote)* |
 
 ---
 
