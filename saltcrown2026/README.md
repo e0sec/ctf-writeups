@@ -28,6 +28,9 @@
 | [cinderbound](pwn_cinderbound/) | Reversing / Pwn | `HTB{c1nd3rbound_v0w5}` |
 | [ring\_the\_bell](pwn_ring_the_bell/) | Pwn | `HTB{R1ng4_R1ng4_R1111111nG_ae2a4adf4c9e7494d5e890be1b63f4b7}` |
 | [the\_hinge\_whisper](pwn_the_hinge_whisper/) | Pwn | `HTB{th3_h1ng3_wh1sp3r5_t0_th0s3_wh0_l1st3n_a40cab2eee58fc47361010c6bf60bdcc}` |
+| [The Hollow Courier](sec_hollow_courier/) | Secure Coding | *(IP spoofing / broken access control — see writeup)* |
+| [crownspire-deploy](fsc_force_push/) | Forensics | `HTB{th3_r3l1qu4ry_n3v3r_f0rg3ts}` |
+| [ringtrue](rev_ringtrue/) | Reverse Engineering | `HTB{h3y_s1gn3t_1_4m_y0ur_k1ng}` |
 
 ---
 
