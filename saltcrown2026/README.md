@@ -21,6 +21,13 @@
 | [First Mark](first-mark/) | Reverse Engineering | `HTB{cut_f0r_th3_P1NT}` |
 | [Overstrike](overstrike/) | Mobile (Android / Godot) | `HTB{0v3rstr1k3_r3cut_th3_w0rld_s34l_by_f0rg1ng_th3_mark}` |
 | [The Forged Signet](qnt_the_forged_signet/) | Quantum | `HTB{th3_f1rst_m4rk_1s_4_h1dd3n_x0r_p3r10d_bec6b1c9b3f37cf299f3a921a74d2a72}` |
+| [Ashen Field](crypto_ashen_field/) | Crypto | `HTB{e1th3r_gr0bn3r_0r_v4r13ty___1t_st1ll_w0rks!th4nks_f4l4y_f0r_y0ur_4tt4ck_0n_HFE}` |
+| [The Ash-Binder Signature](fsc_ash_binder_signature/) | Forensics / DFIR | *(11 answers — see writeup)* |
+| [What the Shard Displayed](hw_what_the_shard_displayed/) | Hardware | `HTB{3v3ry_crow_w3ars_h3r_3y3s}` |
+| [The Cadence in the Cord](hw_the_cadence_in_the_cord/) | Hardware / Forensics | `HTB{th3_f1rst_m4rk_r1ngs_tru3_b3n34th_th3_w0rds}` |
+| [cinderbound](pwn_cinderbound/) | Reversing / Pwn | `HTB{c1nd3rbound_v0w5}` |
+| [ring\_the\_bell](pwn_ring_the_bell/) | Pwn | `HTB{R1ng4_R1ng4_R1111111nG_ae2a4adf4c9e7494d5e890be1b63f4b7}` |
+| [the\_hinge\_whisper](pwn_the_hinge_whisper/) | Pwn | `HTB{th3_h1ng3_wh1sp3r5_t0_th0s3_wh0_l1st3n_a40cab2eee58fc47361010c6bf60bdcc}` |
 
 ---
 
