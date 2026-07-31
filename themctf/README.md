@@ -14,4 +14,4 @@ Captained team **e0_** to **28th place out of 920 teams** in this international 
 
 ---
 
-*All writeups authored by [e0 Security](https://e0sec.github.io).*
+*All writeups authored by [e0 Security](https://e0sec.github.io), drafted and formatted with AI assistance.*
