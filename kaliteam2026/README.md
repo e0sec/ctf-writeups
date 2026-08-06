@@ -7,6 +7,8 @@
 | [Robots](robots/) | Web | `KaliTeam{4638fa2e-b8a4-4a6e-95a8-8e25c36270b1}` |
 | [Call Me](call_me/) | Misc | `KaliTeam{s1gn41_h34rd_10ud_4nd_c134r_!!!!}` |
 | [Leaky](leaky/) | PWN | `KaliTeam{2d62adb5-6374-436b-a183-2a521b309752}` |
+| [Merkle's Trapdoor](merkles_trapdoor/) | Crypto | `KaliTeam{M4rK14_h3lLm3n_Kn3ps3cK}` |
+| [Whispering Feather](whispering_feather/) | REV | `KaliTeam{p0lyg1ot_b3h1nd_th3_m1rr0r}` |
 
 ---
 
