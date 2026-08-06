@@ -31,7 +31,7 @@ POST /admin.php HTTP/1.1
 Host: 456e.chall.kali-team.online:8001
 Content-Type: application/x-www-form-urlencoded
 
-username=kkt&password=kkt
+username=joe&password=doe
 ```
 
 returned:
