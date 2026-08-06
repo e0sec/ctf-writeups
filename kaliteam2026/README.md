@@ -9,6 +9,7 @@
 | [Leaky](leaky/) | PWN | `KaliTeam{2d62adb5-6374-436b-a183-2a521b309752}` |
 | [Merkle's Trapdoor](merkles_trapdoor/) | Crypto | `KaliTeam{M4rK14_h3lLm3n_Kn3ps3cK}` |
 | [Whispering Feather](whispering_feather/) | REV | `KaliTeam{p0lyg1ot_b3h1nd_th3_m1rr0r}` |
+| [Lock Out](lock_out/) | Web / Broken Access Control | `KaliTeam{d5cd10c0-9980-4b30-9ac2-a6fb6c3dfe6c}` |
 
 ---
 
