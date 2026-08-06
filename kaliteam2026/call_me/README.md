@@ -1,7 +1,16 @@
-# Signal 037 — Kali Team CTF 26 writeup
+# Call Me
 
-**Category:** Forensics / Steganography
-**Flag:** `KaliTeam{s1gn41_h34rd_10ud_4nd_c134r_!!!!}`
+| Field | Details |
+|-------|---------|
+| **Challenge** | Call Me |
+| **CTF** | Kali Team CTF 26 |
+| **Category** | Misc |
+| **Points** | 100 |
+| **Author** | SHADOW |
+| **Description** | "so ezzz" |
+| **Flag** | `KaliTeam{s1gn41_h34rd_10ud_4nd_c134r_!!!!}` |
+
+---
 
 ## Challenge
 
