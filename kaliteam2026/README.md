@@ -12,5 +12,11 @@
 | [Lock Out](lock_out/) | Web / Broken Access Control | `KaliTeam{d5cd10c0-9980-4b30-9ac2-a6fb6c3dfe6c}` |
 
 ---
+# Certifications of Attendance for our team members #
+https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/52.pdf
+https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/53.pdf
+https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/54.pdf
+https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/55.pdf
+---
 
 *All writeups authored by [e1](mailto:e0sec@proton.me), with substantial AI assistance in analysis and writing.*
