@@ -13,10 +13,10 @@
 
 ---
 # Certificates of Participation for our team members #
-![image](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/52.pdf)
-![image](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/53.pdf)
-![image](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/54.pdf)
-![image](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/55.pdf)
+![e1](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/52.png)
+![cyberachille](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/53.png)
+![lordginer](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/54.png)
+![KebabEnjoyer](https://github.com/e0sec/ctf-writeups/blob/main/kaliteam2026/55.png)
 ---
 
 *All writeups authored by [e1](mailto:e0sec@proton.me), with substantial AI assistance in analysis and writing.*
